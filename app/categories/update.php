@@ -37,7 +37,7 @@ try {
         new DatabaseManager(),
         new CategoryRepository()
     );
-    $updateResult = $categoryService->getCategoryUpdate($id, $title);
+    $updateResult = $categoryService->getCategoryUpdate(id: $id, title: $title);
 
     if (!$updateResult) {
         error_log('Validation: update error');

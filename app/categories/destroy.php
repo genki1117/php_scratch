@@ -22,7 +22,7 @@ try {
         new DatabaseManager,
         new CategoryRepository
     );
-    $deleteResult = $categoryService->getCategoryDelete($id);
+    $deleteResult = $categoryService->getCategoryDelete(id: $id);
 
     if (!$deleteResult) {
         error_log('Validation: delete invalid.');

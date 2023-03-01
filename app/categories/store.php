@@ -36,7 +36,7 @@ try {
         new DatabaseManager(),
         new CategoryRepository()
     );
-    $createResult = $categoryService->getCategoryCreate($id, $title);
+    $createResult = $categoryService->getCategoryCreate(id: $id, title: $title);
 
     if (!$createResult) {
         error_log('Validation: create Invalid');

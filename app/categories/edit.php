@@ -22,7 +22,7 @@ try {
         new DatabaseManager,
         new CategoryRepository
     );
-    $category = $categoryService->getCategory($id);
+    $category = $categoryService->getCategory(id: $id);
     require __DIR__ . '/../../view/categories/edit.php';
 
     if (empty($category)) {

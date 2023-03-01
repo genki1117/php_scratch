@@ -29,16 +29,15 @@ class CategoryService
      */
     public function getCategoryAll(): CategoryEntity
     {
-        $pdo        = $this->databaseManagerObj->getPdo();
-        $categories = $this->categoryRepositoryObj->getCategoryAll($pdo);
-        return $categories;
+        $pdo = $this->databaseManagerObj->getPdo();
+        return $this->categoryRepositoryObj->getCategoryAll(pdo: $pdo);
     }
 
     public function getCategoryCreate(int $id, string $title)
     {
-        $pdo        = $this->databaseManagerObj->getPdo();
-        $createResult = $this->categoryRepositoryObj->getCategoryCreate($pdo, $id, $title);
-        return $createResult;
+        $pdo = $this->databaseManagerObj->getPdo();
+        return $this->categoryRepositoryObj->getCategoryCreate(pdo: $pdo, id: $id, title: $title);
+
     }
     
 
@@ -50,9 +49,8 @@ class CategoryService
      */
     public function getCategory(int $id): CategoryEntity
     {
-        $pdo      = $this->databaseManagerObj->getPdo();
-        $category = $this->categoryRepositoryObj->getCategoryForId($pdo, $id);
-        return $category;
+        $pdo = $this->databaseManagerObj->getPdo();
+        return $this->categoryRepositoryObj->getCategoryForId(pdo: $pdo, id: $id);
     }
 
     /**
@@ -64,9 +62,8 @@ class CategoryService
      */
     public function getCategoryUpdate(int $id, string $title): bool
     {
-        $pdo          = $this->databaseManagerObj->getPdo();
-        $updateResult = $this->categoryRepositoryObj->getCategoryUpdate($pdo, $id, $title);
-        return $updateResult;
+        $pdo = $this->databaseManagerObj->getPdo();
+        return $this->categoryRepositoryObj->getCategoryUpdate(pdo: $pdo, id: $id, title: $title);
     }
 
     /**
@@ -77,15 +74,13 @@ class CategoryService
      */
     public function getCategoryDelete(int $id): bool
     {
-        $pdo          = $this->databaseManagerObj->getPdo();
-        $deleteDelete = $this->categoryRepositoryObj->getCategoryDelete($pdo, $id);
-        return $deleteDelete;
+        $pdo = $this->databaseManagerObj->getPdo();
+        return $this->categoryRepositoryObj->getCategoryDelete(pdo: $pdo, id: $id);
     }
 
     public function getCategoryIdAndTitle()
     {
-        $pdo          = $this->databaseManagerObj->getPdo();
-        $getCategoryIdAndTitle = $this->categoryRepositoryObj->getCategoryIdAndTitle($pdo);
-        return $getCategoryIdAndTitle;
+        $pdo = $this->databaseManagerObj->getPdo();
+        return $this->categoryRepositoryObj->getCategoryIdAndTitle(pdo: $pdo);
     }
 }
