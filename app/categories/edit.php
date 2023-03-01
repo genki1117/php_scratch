@@ -30,6 +30,8 @@ try {
         header('Location: error.php');
         exit();
     }
+
+    require __DIR__ . '/../../view/categories/edit.php';
 } catch (PDOException $e) {
     error_log('PDOException: ' . $e->getMessage());
     header('Location: error.php');
